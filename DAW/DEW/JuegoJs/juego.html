@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Página sin título</title>
+<script language="javascript" type="text/javascript">
+var posicion = new Array();
+var i=0;
+function testtimeout(){
+switch (i)
+{
+    case 0: document.getElementById("Div0").style.visibility = "visible"
+            document.getElementById("Div1").style.visibility= "hidden"
+            document.getElementById("Div2").style.visibility = "hidden"
+            break;
+    case 1: document.getElementById("Div0").style.visibility = "hidden"
+            document.getElementById("Div1").style.visibility = "visible"
+            document.getElementById("Div2").style.visibility = "hidden"
+            break;
+    case 2: document.getElementById("Div0").style.visibility = "hidden"
+            document.getElementById("Div1").style.visibility= "hidden"
+            document.getElementById("Div2").style.visibility = "visible"
+            break;
+    
+}
+ 
+i=Math.floor(Math.random()*3) //El *3 deberia cambiar en funcion del numero de divs que tienes, esto luego se tiene que acomodar a
+//lo que tu necesitas :) es el numero de numeros que recorre desde 0 hasta el numero(en este caso 3) -1
+ 
+t=setTimeout("testtimeout()",3000); 
+}
+ </script>
+</head>
+<body onload="testtimeout()">
+    <div style="position: absolute; left: 100px; top: 100px" id="Div0">CONTENIDO0</div>
+    <div style="position: absolute; left: 200px; top: 200px ; visibility:hidden" id="Div1">CONTENIDO1</div>
+    <div style="position: absolute; left: 300px; top: 300px ;visibility:hidden" id="Div2">CONTENIDO2</div>
+</body>
+</html>
